@@ -6,7 +6,7 @@ The interactive visualization is available [here](https://controller.phila.gov/p
 For more information, see the application's [About Page](https://controller.phila.gov/philadelphia-audits/interactive-asbestos-dashboard/#/about).
 
 ![Application Banner](public/screenshot-1.png)
-![The Map of Shooting Victims](public/screenshot-2.png)
+![The Map of Asbestos Projects](public/screenshot-2.png)
 
 ## Data
 
