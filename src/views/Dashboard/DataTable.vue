@@ -110,6 +110,8 @@ export default {
   },
   methods: {
     formatDate(dt) {
+      console.log(dt);
+      console.log(timeFormat("%m/%d/%Y")(dt));
       return timeFormat("%m/%d/%Y")(dt);
     },
   },

@@ -15,11 +15,22 @@
       <v-card elevation="0" v-if="selectedData !== null">
         <!-- Close button -->
         <div class="w-100 d-flex justify-content-end p-3">
-          <div class="d-flex flex-column">
-            <v-btn @click="handleDialogClose" outlined :ripple="false">
+          <div id="dialogButtonsWrapper" class="d-flex flex-column">
+            <v-btn
+              id="dialogCloseButton"
+              @click="handleDialogClose"
+              outlined
+              :ripple="false"
+            >
               Close
             </v-btn>
-            <v-btn class="mt-2" outlined :ripple="false" @click="downloadData">
+            <v-btn
+              id="dialogDownloadButton"
+              class="mt-2"
+              outlined
+              :ripple="false"
+              @click="downloadData"
+            >
               <i class="fas fa-download"></i
               ><span class="ml-3">Download Data</span></v-btn
             >
@@ -27,32 +38,38 @@
         </div>
 
         <!-- Card title -->
-        <div class="popup-data-table-header">
-          <div class="d-flex flex-column">
-            <div class="header">{{ clickedSchool.school_name }}</div>
-            <hr class="my-divider" />
+        <div class="m-3 m-md-5">
+          <div class="popup-data-table-header">
+            <div class="d-flex flex-column">
+              <div class="header">{{ clickedSchool.school_name }}</div>
+              <hr class="my-divider" />
+            </div>
+            <div class="line" v-if="clickedSchool.school_website">
+              <a :href="clickedSchool.school_website" target="_blank"
+                >Website<i class="ml-1 fas fa-external-link-alt"></i
+              ></a>
+            </div>
+            <div class="line">
+              <span class="font-weight-bold">Address: </span
+              >{{ clickedSchool.school_address }}
+            </div>
+            <div class="line">
+              <span class="font-weight-bold">Level: </span>
+              {{ getAlias(clickedSchool.school_level, "school_level") }}
+            </div>
+            <div class="line" v-if="clickedSchool.year_opened">
+              <span class="font-weight-bold">Year Opened: </span
+              >{{ clickedSchool.year_opened }}
+            </div>
+            <div class="line" v-if="clickedSchool.year_closed">
+              <span class="font-weight-bold">Year Closed: </span
+              >{{ clickedSchool.year_closed }}
+            </div>
           </div>
-          <div class="line" v-if="clickedSchool.school_website">
-            <a :href="clickedSchool.school_website" target="_blank"
-              >Website<i class="ml-1 fas fa-external-link-alt"></i
-            ></a>
-          </div>
-          <div class="line">
-            <span class="font-weight-bold">Address: </span
-            >{{ clickedSchool.school_address }}
-          </div>
-          <div class="line">
-            <span class="font-weight-bold">Level: </span>
-            {{ getAlias(clickedSchool.school_level, "school_level") }}
-          </div>
-          <div class="line">
-            <span class="font-weight-bold">Year Opened: </span
-            >{{ clickedSchool.year_opened }}
-          </div>
-        </div>
 
-        <!-- Data table -->
-        <DataTable :data="selectedData" class="m-5" />
+          <!-- Data table -->
+          <DataTable :data="selectedData" />
+        </div>
       </v-card>
     </v-dialog>
   </div>
@@ -128,6 +145,7 @@ export default {
           permanent: false,
           sticky: true,
           opacity: 1.0,
+          interactive: true,
         });
 
         // Highlight on mouseover
@@ -239,18 +257,35 @@ export default {
     /* Tooltip text for bubbles */
     getTooltipText(feature) {
       // School name
-      let text = `<div class="tooltip-title">${feature.properties.school_name}</div>`;
-
-      // Add the number of projects
+      let school = feature.properties.school_name;
       let count = this.schoolCounts.get(feature.properties.school_name);
+
+      let text = `<div class="tooltip-title">${school}</div>`;
       if (count > 1) {
         text += `<div class="tooltip-line text-center">${count} projects</div>`;
       } else
         text += `<div class="tooltip-line text-center">${count} project</div>`;
 
-      text += `<div class="tooltip-line text-center font-italic mt-5">Click for more info</div>`;
+      text += `<div id='clickMoreInfo' class="tooltip-line text-center font-italic mt-5">Click for more info</div>`;
 
-      return text;
+      // Create an element to hold all your text and markup
+      let container = $("<div />");
+
+      // Delegate all event handling for the container itself and its contents to the container
+      container.on("click", "#clickMoreInfo", (e) => {
+        e.preventDefault();
+        this.clickedSchool = feature.properties;
+        this.dialog = true;
+        this.$nextTick(() => {
+          this.$emit("map-click", this.clickedSchool.school_name);
+        });
+      });
+
+      // Insert whatever you want into the container, using whichever approach you prefer
+      container.html(text);
+
+      // Insert the container into the popup
+      return container[0];
     },
     /* Style function for bubble chart */
     styleFunction(feature) {
@@ -309,12 +344,15 @@ export default {
       // Stop propagation
       L.DomEvent.stopPropagation(e);
 
-      // Open the dialog
-      this.dialog = true;
+      // Not a touch screen
+      if (matchMedia("(pointer:fine)").matches) {
+        // Set the clicked school
+        this.clickedSchool = e.target.feature.properties;
 
-      // Set the clicked school
-      this.clickedSchool = e.target.feature.properties;
-      this.$emit("map-click", this.clickedSchool.school_name);
+        // Open the dialog
+        this.dialog = true;
+        this.$emit("map-click", this.clickedSchool.school_name);
+      }
     },
 
     /* Zoom home */
@@ -344,6 +382,12 @@ export default {
   .map-pane {
     height: 500px !important;
   }
+  #dialogButtonsWrapper {
+    width: 100%;
+  }
+  #clickMoreInfo {
+    text-decoration: underline;
+  }
 }
 /* Zoom control */
 .fa-home {
@@ -368,12 +412,12 @@ export default {
   font: 1rem sans-serif;
   background: #ffffff;
   border-radius: 8px;
-  pointer-events: none;
   border: 1px solid #cdcdcd;
   opacity: 1;
   display: block;
   max-width: 400px;
   min-width: 200px;
+  pointer-events: auto !important;
 }
 .tooltip-title {
   margin-bottom: 5px;
@@ -390,7 +434,6 @@ export default {
 }
 
 .popup-data-table-header {
-  margin-left: 3rem;
   font-size: 1rem;
 }
 

@@ -60,6 +60,7 @@ import DataTable from "./DataTable";
 // External
 import crossfilter from "crossfilter2";
 import { min, max } from "d3-array";
+import { timeParse } from "d3-time-format";
 
 export default {
   name: "Dashboard",
@@ -167,10 +168,11 @@ export default {
       let data = await fetchAWS("asbestos-data");
 
       // Format date and time
+      const fmt = timeParse("%m-%d-%Y");
       data.forEach((d) => {
         for (let i = 0; i < DATE_COLUMNS.length; i++) {
           let dateColumn = DATE_COLUMNS[i];
-          d[dateColumn] = new Date(d[dateColumn]).getTime();
+          d[dateColumn] = fmt(d[dateColumn]).getTime();
         }
       });
 

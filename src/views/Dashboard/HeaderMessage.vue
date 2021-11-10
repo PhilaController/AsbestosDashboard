@@ -2,7 +2,7 @@
   <div class="header-message-wrapper w-100">
     <!-- Title -->
     <div class="header-message pl-2 pr-2">
-      <div>Asbestos in the Philadelphia School District</div>
+      <div>Asbestos Projects in the Philadelphia School District</div>
       <v-divider class="my-divider mt-3" />
     </div>
 
@@ -41,6 +41,8 @@ export default {
   line-height: 1.1;
   font-family: Montserrat, sans-serif;
   text-align: center;
+  max-width: 1000px;
+  margin: auto;
 }
 
 .header-message p:nth-child(2) {
@@ -64,7 +66,7 @@ export default {
     font-size: 1.6rem;
     margin-top: 50px;
     text-align: center;
-    line-height: 1.5;
+    line-height: 1.3;
   }
   .header-message {
     text-align: center;

@@ -26,11 +26,13 @@ const OUTPUT_COLUMNS = {
 
 // Categories for specific dimensions
 const CATEGORIES = {
-    "project_type": ['Minor Removal Project',
-        'Major Removal Project',
-        'Incidental Removal Project',
+    "project_type": [
         'Non Friable Removal',
-        'Small Removal Project'],
+        'Small Removal Project',
+        'Incidental Removal Project',
+        'Minor Removal Project',
+        'Major Removal Project'
+    ],
     "operation_type": ['Renovation', 'Emergency Renovation', 'Abatement prior to Demolition'],
     "school_level": [
         'elementary',

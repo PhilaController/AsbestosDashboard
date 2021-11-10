@@ -8,65 +8,117 @@
       <p>
         Under the leadership of City Controller Rebecca Rhynhart, the
         Controller’s Office is committed to increasing transparency for datasets
-        of public interest. To that end, this dashboard provides data related to
-        asbestos abatement projects associated with school buildings in the
-        Philadelphia School District. The data presented here is sourced
-        directly from publicly available information on the Department of Public
-        Health's
+        of public interest. To that end, this dashboard presents data related to
+        asbestos abatement projects in School District buildings. The data is
+        provided for informational purposes only in accordance with the office's
+        goals of transparency, accountability, and good government.
+      </p>
+      <p>
+        Specifically, this dashboard shows information provided to the City of
+        Philadelphia’s Department of Public Health about construction projects
+        involving asbestos in School District buildings. In Philadelphia,
+        asbestos abatement projects of any size require submission of a
+        <a
+          href="https://www.phila.gov/media/20181002095145/Asbestos_Abatement_and_Demolition-Renovation_Notification_Form___.pdf"
+          target="_blank"
+          ><span>notification form</span
+          ><i class="ml-1 fas fa-external-link-alt"></i
+        ></a>
+        to the Public Health Department. The information from these forms is
+        available for public download on the City’s
         <a href="http://www.citizenserve.com/philagov" target="_blank"
           ><span>Air Management Services online portal</span
           ><i class="ml-1 fas fa-external-link-alt"></i></a
-        >. The data is provided for informational purposes only in accordance
-        with the office's goals of transparency, accountability, and good
-        government.
+        >. The dashboard relies on this public information, extracting out data
+        for school buildings and mapping the projects across the city. The
+        dashboard includes data for projects since 2016 and is updated with new
+        projects each day.
       </p>
       <p>
-        Asbestos fibers were a commonly used building material throughout the
-        20th century. When asbestos is disturbed, it can release harmful dust
-        into the air, which can lead to lung disease and cancer if inhaled.
-        Because of its potentially harmful effects, the process of identifying
-        and remediating asbestos is heavily regulated by city, state, and
-        federal laws. In Philadelphia, asbestos abatement projects of any size
-        require submitting notification to the Department of Public Health’s Air
-        Management Services office.
-        <a
-          href="https://www.phila.gov/services/permits-violations-licenses/apply-for-a-permit/environmental-permits-and-approvals/dust-air-pollution-and-asbestos/apply-for-an-asbestos-project-permit/"
-          target="_blank"
-          ><span
-            >Learn more about the permit process for asbestos projects in
-            Philadelphia</span
-          ><i class="ml-1 fas fa-external-link-alt"></i></a
-        >.
-      </p>
-      <p>
-        The raw data for this dashboard is obtained from the “Electronic
-        Asbestos Notification Report,” which is available on the “Reports” page
-        of the Air Management Services portal. The raw data is processed for
-        clarity, and projects are matched to a list of schools in the
-        Philadelphia School District. The dashboard includes data for projects
-        since 2016 and is updated each day automatically.
+        Asbestos fibers, which were a common building material for insulation
+        and fireproofing until a partial ban in 1989, can release harmful dust
+        into the air that can cause lung disease and cancer if inhaled. Because
+        of its potentially harmful effects, the process of identifying and
+        remediating asbestos is heavily regulated by city, state, and federal
+        laws.
       </p>
 
-      <div id="notes">
-        <p>
-          <span class="font-italic font-weight-bold">Note:</span> Because this
-          dashboard shows data from the City’s notification application forms,
-          which are submitted prior to a project's start, the “Work End Date” is
-          an anticipated rather than actual date. Furthermore, the “Work
-          Description” entries reflect the descriptions listed on the
-          notification form and may not sufficiently represent the entirety of
-          asbestos identification and removal work done. Finally, the dashboard
-          excludes asbestos projects that occur at buildings owned by the School
-          District of Philadelphia that are not listed as schools on
-          <a
-            href="https://www.philasd.org/performance/programsservices/open-data/school-information/"
-            target="_blank"
-            ><span>the "School Information" page on the District's website</span
-            ><i class="ml-1 fas fa-external-link-alt"></i></a
-          >. This includes bus garages, field houses, and school annex
-          buildings.
-        </p>
+      <div id="learn-more-subsection">
+        <div id="learnMoreTitle" class="font-italic font-weight-bold">
+          Learn More
+        </div>
+        <ul>
+          <li>
+            Background information on asbestos and existing regulations can be
+            found on
+            <a href="https://www.epa.gov/asbestos" target="_blank"
+              ><span>the Environmental Protection Agency’s website.</span
+              ><i class="ml-1 fas fa-external-link-alt"></i></a
+            >.
+          </li>
+          <li>
+            The School District provides
+            <a
+              href="https://www.philasd.org/capitalprograms/programsservices/environmental/ahera/"
+              target="_blank"
+              ><span>information related to asbestos on its website</span
+              ><i class="ml-1 fas fa-external-link-alt"></i></a
+            >.
+          </li>
+          <li>
+            The City of Philadelphia provides information regarding the
+            <a
+              href="https://www.phila.gov/services/permits-violations-licenses/apply-for-a-permit/environmental-permits-and-approvals/dust-air-pollution-and-asbestos/apply-for-an-asbestos-project-permit/"
+              target="_blank"
+              ><span>permit process for asbestos abatement projects</span
+              ><i class="ml-1 fas fa-external-link-alt"></i></a
+            >, as well as
+            <a
+              href="https://www.phila.gov/documents/asbestos-documents-and-forms/"
+              target="_blank"
+              ><span>additional asbestos documents and forms</span
+              ><i class="ml-1 fas fa-external-link-alt"></i></a
+            >.
+          </li>
+        </ul>
       </div>
+    </div>
+
+    <div id="methods-section" class="section">
+      <h2>Data & Methods</h2>
+      <hr class="titlebar" />
+
+      <p>
+        The raw data for this dashboard is obtained from the “Electronic
+        Asbestos Notification Report,” which is publicly available on the
+        “Reports” page of the
+        <a href="http://www.citizenserve.com/philagov" target="_blank"
+          ><span>Air Management Services portal</span
+          ><i class="ml-1 fas fa-external-link-alt"></i></a
+        >. The raw data is processed for clarity, and projects are matched to a
+        list of schools in the Philadelphia School District. The dashboard
+        includes data for projects since 2016 and is updated each day
+        automatically.
+      </p>
+      <p>
+        Because this dashboard shows data from the City’s notification
+        application forms, which are submitted prior to a project's start, the
+        "Planned Completeion Date” is an anticipated rather than actual date.
+        Furthermore, the "Description” field for each project reflects the
+        descriptions listed on the notification form and may not sufficiently
+        represent the entirety of asbestos identification and removal work done.
+        Finally, the dashboard excludes asbestos projects that occur at
+        buildings owned by the School District of Philadelphia that are not
+        listed as schools on
+        <a
+          href="https://www.philasd.org/performance/programsservices/open-data/school-information/"
+          target="_blank"
+          ><span
+            >the "School Information" page on the School District's
+            website</span
+          ><i class="ml-1 fas fa-external-link-alt"></i></a
+        >. This includes bus garages, field houses, and school annex buildings.
+      </p>
     </div>
 
     <div id="asbestos-info-section" class="section">
@@ -74,14 +126,12 @@
       <hr class="titlebar" />
 
       <p>
-        Below is a list of commonly used acrononyms related to asbestos. These
-        acronoymns are often found in the work descriptions for an individual
+        Below is a list of commonly used acronyms related to asbestos. These
+        acronyms are often found in the work descriptions for an individual
         project. This section also includes definitions and additional
-        information related to asbestos projects.
-        <a href="https://www.epa.gov/asbestos" target="_blank"
-          ><span>Learn more asbestos</span
-          ><i class="ml-1 fas fa-external-link-alt"></i></a
-        >.
+        information related to the sizes of asbestos projects. Acronyms and
+        definitions are from materials provided by the City’s Public Health
+        Department.
       </p>
 
       <!-- Acronyms -->
@@ -90,7 +140,9 @@
         <hr class="titlebar sub" />
 
         <div class="section" style="margin-top: 1rem">
-          <ul aria-labelledby="common-acronyms" style="padding-left: 0rem">
+          <!-- Asbestos Types -->
+          <h4>Asbestos Types</h4>
+          <ul>
             <li>
               <span class="font-weight-bold">ACM</span>: Asbestos-Containing
               Material
@@ -106,6 +158,23 @@
             <li>
               <span class="font-weight-bold">VAT</span>: Vinyl Asbestos Tiling
             </li>
+            <li><span class="font-weight-bold">FRI</span>: Friable Asbestos</li>
+          </ul>
+
+          <!-- Units -->
+          <h4>Units</h4>
+          <ul>
+            <li><span class="font-weight-bold">LF</span>: Linear Feet</li>
+            <li><span class="font-weight-bold">SF</span>: Square Feet</li>
+            <li><span class="font-weight-bold">CF</span>: Cubic Feet</li>
+          </ul>
+
+          <!-- Abatement Methods -->
+          <h4>Abatement Methods</h4>
+          <ul>
+            <li><span class="font-weight-bold">REM</span>: Removal</li>
+            <li><span class="font-weight-bold">CAP</span>: Encapsulation</li>
+            <li><span class="font-weight-bold">CLO</span>: Enclosure</li>
           </ul>
         </div>
       </div>
@@ -190,9 +259,22 @@
 
         <div class="section">
           <h4 id="project-header">Projects</h4>
+          <p class="font-italic">
+            Sorted from smallest to largest by amount of asbestos material.
+          </p>
           <p>
             <span class="font-weight-bold">Incidental Project</span>: Abatement
             of less than 1 linear or 5 square feet.
+          </p>
+          <p>
+            <span class="font-weight-bold">Small Project</span>: Abatement
+            greater than or equal to 1 linear or 5 square feet but less than 3
+            linear or 12 square feet.
+          </p>
+          <p>
+            <span class="font-weight-bold">Minor Project</span>: Abatement
+            greater than or equal to 3 linear or 12 square feet but less than 40
+            linear or 80 square feet.
           </p>
           <p>
             <span class="font-weight-bold">Major Project, Permitted</span>:
@@ -206,18 +288,8 @@
             units or less where there is no asbestos present.
           </p>
           <p>
-            <span class="font-weight-bold">Minor Project</span>: Abatement
-            greater than or equal to 3 linear or 12 square feet but less than 40
-            linear or 80 square feet.
-          </p>
-          <p>
             <span class="font-weight-bold">NESHAP Project</span>: Abatement
             greater than or equal to 260 linear or 160 square feet.
-          </p>
-          <p>
-            <span class="font-weight-bold">Small Project</span>: Abatement
-            greater than or equal to 1 linear or 5 square feet but less than 3
-            linear or 12 square feet.
           </p>
         </div>
       </div>
@@ -259,6 +331,9 @@ export default {
 </script>
 
 <style>
+#learnMoreTitle {
+  font-size: 1.1rem;
+}
 .sub {
   border-top-color: #ef5350 !important;
   padding-bottom: 10px !important;
@@ -285,6 +360,7 @@ export default {
 }
 #about-page h4 {
   margin-bottom: 1rem !important;
+  margin-top: 1rem !important;
 }
 #project-header {
   margin-top: 2rem !important;
@@ -303,8 +379,7 @@ export default {
 }
 
 #about-page ul {
-  list-style-type: none;
-  line-height: 2;
+  margin-left: 0.5rem;
 }
 
 #about-page a {
