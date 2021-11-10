@@ -1,23 +1,18 @@
-# Mapping Philadelphia's Gun Violence Crisis
+# Mapping Asbestos Projects in the Philadelphia School District
 
-The code behind the interactive map of Philadelphia's gun violence crisis. 
+The code behind the interactive dashboard mapping asbestos projects in the School District of Philadelphia
 
-The interactive visualization is available [here](https://controller.phila.gov/philadelphia-audits/mapping-gun-violence/#/).
-For more information, see the application's [About Page](https://controller.phila.gov/philadelphia-audits/mapping-gun-violence/#/about).
+The interactive visualization is available [here](https://controller.phila.gov/philadelphia-audits/interactive-asbestos-dashboard/#/).
+For more information, see the application's [About Page](https://controller.phila.gov/philadelphia-audits/interactive-asbestos-dashboard/#/about).
 
-![Application Banner](public/banner.png)
-![The Map of Shooting Victims](public/map.png)
-![The Dashboard of Charts](public/charts.png)
+![Application Banner](public/screenshot-1.png)
+![The Map of Shooting Victims](public/screenshot-2.png)
 
 ## Data
 
-The application relies on a number of publicly available data sources, including: 
+The application relies on publicly available data from the Department of Public Health's [Air Management Services online portal](https://www.citizenserve.com/philagov/),
 
-- [Data for shooting victims](https://www.opendataphilly.org/dataset/shooting-victims) from the City of Philadelphia's open data portal;
-- [Philadelphia's total homicide count](https://www.phillypolice.com/crime-maps-stats/) from the Philadelphia Police Department's crime statistics website, and;
-- [Information on court cases associated with shooting incidents](https://ujsportal.pacourts.us/DocketSheets/MC.aspx) compiled from the web portal for Pennsylvania's Unified Judicial System.
-
-For the software and data behind the analysis for this dashboard, see the companion repository [PhiladelphiaController/gun-violence-dashboard-data](https://github.com/PhiladelphiaController/gun-violence-dashboard-data).
+For the software and data behind the analysis for this dashboard, see the companion repository [PhiladelphiaController/asbestos-dashboard-data](https://github.com/PhiladelphiaController/asbestos-dashboard-data).
 
 ## Tools
 
@@ -30,18 +25,20 @@ The application is built using a combination of open-source tools, including:
 
 ## Development
 
+First, clone the repository, and then from the root folder of the repository:
+
 ### Project setup
 ```
-npm install
+yarn install
 ```
 
 ### Compiles and hot-reloads for development
 ```
-npm run serve
+yarn run serve
 ```
 
 ### Compiles and minifies for production
 ```
-npm run build
+yarn run build
 ```
 
